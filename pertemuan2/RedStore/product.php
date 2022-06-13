@@ -168,7 +168,9 @@ $jualansepatu = [
                 <ul>
                     <?php foreach ($jualansepatu as $product) : ?>
                         <li>
+                            <div class="eee">
                             <img src="<?= $product['gambar'] ?>">
+                            </div>
                             <div class="items">
                                 <strong><?= $product['namasepatu'] ?></strong>
                                 <hr>
