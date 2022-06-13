@@ -163,43 +163,47 @@ $jualansepatu = [
                 <option value="">short by sale</option>
             </select>
         </div>
-        <section class="aaaa">
-            <div class="list-product">
-                <ul>
-                    <?php foreach ($jualansepatu as $product) : ?>
-                        <li>
-                            <div class="eee">
+    </div>
+    <section class="aaaa">
+        <div class="list-product">
+            <ul>
+                <?php foreach ($jualansepatu as $product) : ?>
+                    <li>
+                        <div class="kuas">
+                            <div class="container" >
                             <img src="<?= $product['gambar'] ?>">
                             </div>
-                            <div class="items">
-                                <strong><?= $product['namasepatu'] ?></strong>
-                                <hr>
-                                <strong><?= $product['mereksepatu'] ?></strong>
-                                <br>
-                                Bahan :
-                                <?php foreach ($product['bahansepatu'] as $bahansepatu) : ?>
-                                    <?= $bahansepatu . ", "; ?>
-                                <?php endforeach ?> <br>
-                                fungsi :
-                                <?php foreach ($product['cocokuntuk'] as $cocokuntuk) : ?>
-                                    <?= $cocokuntuk . ", "; ?>
-                                <?php endforeach ?> <br><br>
-                                <div class="harga" style="margin-top:-20px !important;"> <?= "Rp" . number_format($product['hargasepatu'], 2) ?> <br>
-                                </div>
-                                <div class="button" style="margin-top:10px !important;">
-                                    <button type="button" style="padding:2px 10px; background-color:yellow; border:2px solid grey; font-size:12px;">
-                                        <i class="fa fa-shopping-cart" style="font-size:11px; margin-right:5   px;" aria-hidden="true"></i> Langsung Beli
-                                    </button>
-                                    <button type="button" style="padding:2px 10px; background-color:yellow; border:2px solid grey; font-size:12px;">Masukkan Keranjang</button>
-                                </div>
+                        </div>
+                        <div class="items">
+                            <strong><?= $product['namasepatu'] ?></strong>
+                            <hr>
+                            <strong><?= $product['mereksepatu'] ?></strong>
+                            <br>
+                            Bahan :
+                            <?php foreach ($product['bahansepatu'] as $bahansepatu) : ?>
+                                <?= $bahansepatu . ", "; ?>
+                            <?php endforeach ?> <br>
+                            fungsi :
+                            <?php foreach ($product['cocokuntuk'] as $cocokuntuk) : ?>
+                                <?= $cocokuntuk . ", "; ?>
+                            <?php endforeach ?> <br><br>
+                            <div class="harga" style="margin-top:-20px !important;"> <?= "Rp" . number_format($product['hargasepatu'], 2) ?> <br>
                             </div>
+                        </div>
+                        <div class="button" style="margin-top:10px;">
+                            <button type="button" style="padding:2px 10px; background-color:yellow; border:2px solid grey; font-size:12px;">
+                                <i class="fa fa-shopping-cart" style="font-size:11px; margin-right:5   px;" aria-hidden="true"></i> Langsung Beli
+                            </button>
+                            <button type="button" style="padding:2px 10px; background-color:yellow; border:2px solid grey; font-size:12px;"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                                Masukkan Keranjang</button>
+                        </div>
 
-                        </li>
-                    <?php endforeach ?>
-                </ul>
-            </div>
-        </section>
-    </div>
+                    </li>
+                <?php endforeach ?>
+            </ul>
+        </div>
+    </section>
+
     <div class="page-btn">
         <span>1</span>
         <span>2</span>

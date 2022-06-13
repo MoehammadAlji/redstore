@@ -91,32 +91,39 @@ $jualansepatu = [
             <ul>
                 <?php foreach ($jualansepatu as $product) : ?>
                     <li>
-                        <?php if ($product['cocokuntuk'] == ["jalan-jalan", " bermain basket"]) {
-                            die;
-                        } ?>
-                        <img src="<?= $product['gambar'] ?>"> <br>
-                        <div>
+                        <div class="eee">
+                            <img src="<?= $product['gambar'] ?>">
+                        </div>
+                        <div class="items">
                             <strong><?= $product['namasepatu'] ?></strong>
                             <hr>
-                            <strong><?= $product['mereksepatu'] ?> </strong><br>
+                            <strong><?= $product['mereksepatu'] ?></strong>
+                            <br>
                             Bahan :
                             <?php foreach ($product['bahansepatu'] as $bahansepatu) : ?>
                                 <?= $bahansepatu . ", "; ?>
                             <?php endforeach ?> <br>
-                            Cocok untuk :
+                            fungsi :
                             <?php foreach ($product['cocokuntuk'] as $cocokuntuk) : ?>
                                 <?= $cocokuntuk . ", "; ?>
                             <?php endforeach ?> <br><br>
-                            <div style="margin-bottom:-50px;">
-                                <?= "Rp" . number_format($product['hargasepatu'], 2) ?> <br>
+                            <div class="harga" style="margin-top:-20px !important;"> <?= "Rp" . number_format($product['hargasepatu'], 2) ?> <br>
                             </div>
                         </div>
+                        <div class="button" style="margin-top:10px !important;">
+                            <button type="button" style="padding:2px 10px; background-color:yellow; border:2px solid grey; font-size:12px;">
+                                <i class="fa fa-shopping-cart" style="font-size:11px; margin-right:5   px;" aria-hidden="true"></i> Langsung Beli
+                            </button>
+                            <a href="product.php"><button type="button" style="padding:2px 10px; background-color:yellow; border:2px solid grey; font-size:12px;"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                                    Masukkan Keranjang</button></a>
+                        </div>
+
                     </li>
                 <?php endforeach ?>
             </ul>
         </div>
     </section>
-                                    
+
 
 
     <!-- offer -->

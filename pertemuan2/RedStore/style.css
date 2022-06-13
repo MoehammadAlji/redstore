@@ -12,6 +12,7 @@ body {
     display: flex;
     /* align-items: center; */
     padding: 20px;
+    /* position: fixed; */
 }
 
 nav {
@@ -384,6 +385,8 @@ select:focus {
     gap: 0.3rem;
     background-color: #7BF965;
     border-radius: 0px 10px 0px 50px;
+    flex-wrap: wrap;
+    padding: 10px;
 }
 
 .list-product ul li img {
@@ -395,17 +398,24 @@ select:focus {
     display: block;
 }
 
-.eee {
+.kuas {
     width: 200px;
     height: 170px;
+    flex-basis: 40%;
+}
+
+.kuas .container {
+    display: grid;
     overflow: hidden;
     border-radius: 20px 20px 20px 20px;
-    display: grid;
     place-items: center;
+    width: 200px;
+    height: 200px;
 }
 
 .items {
     font-size: 14px;
+    flex-basis: 50%;
 }
 
 .list-product li {
@@ -416,8 +426,8 @@ select:focus {
     transform: translateY(-10px);
 }
 
-.button button {
-    margin: 5px;
+.button {
+    margin: 10px auto;
 }
 
 
