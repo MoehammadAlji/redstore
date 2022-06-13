@@ -1,0 +1,8 @@
+TUGAS: 
+
+1. Buat List bilangan ganjil dari 1 - 10000 (array indexed)
+2. Buat Profil Dirisindiri (Assosiatvie)
+        Data : Nama, Nickname, Hobi, Nama Ayah, 
+3. Buat Susunan list data sendiri dari web apa yang ingin temen-temen Buat (Harus multidimensi. minimal 10 list)
+        cth : Rental Mobil :
+                Merek, Brand, Seat : [2, 4, 10], Harga, Status (Minimal 5) 

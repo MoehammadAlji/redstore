@@ -1,0 +1,19 @@
+
+1. Membuat Class dan Object di Toko online teman-teman dan melakukan bbrapa Aksi
+   # Menambahkan Produk minimal 5 produk
+      - Menggunakan data kemarin
+      - harga
+   # Bisa Lihat detail Produk
+   # Pemesanan Produk
+      Output, cth: "Berhasil memesan Laptop Acer 56656, Ini kembalian anda {kembalian}", Stocknya habis : "Stock barang ini habis";
+   # Ada sistem stock
+   # Bisa Lihat Kembalian
+
+cth :
+
+class Laptop {
+   public $merek;
+   public $tipe;
+   public $stock;
+   public $harga;
+}
