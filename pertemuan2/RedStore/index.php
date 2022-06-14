@@ -92,7 +92,7 @@ $jualansepatu = [
                 <?php foreach ($jualansepatu as $product) : ?>
                     <li>
                         <div class="eee">
-                            <img src="<?= $product['gambar'] ?>" class="gambar">
+                            <img src="<?= $product['gambar'] ?>" class="gambar-li">
                         </div>
                         <div class="items">
                             <strong><?= $product['namasepatu'] ?></strong>

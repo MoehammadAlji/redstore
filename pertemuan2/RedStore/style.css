@@ -375,22 +375,78 @@ select:focus {
 }
 
 .ini-ul li {
-    border: 1px solid red;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 27px;
+    display: grid;
     margin-bottom: 1rem;
+    flex-direction: column;
+    max-width: 350px;
+    margin-inline: auto;
+    grid-template-rows: 1.5fr 1fr 100px;
+    overflow: hidden;
 }
 
-.button{
-    padding:5px 10px;
+.button {
+    padding: 5px 10px;
 
 }
 
-.button button, .button a{
+.button button, .button a {
     display: block;
     margin-bottom: 10px;
     width: 180px;
     margin-inline: auto;
+    background-color: #ffd6d6;
+    border: none;
+    border-radius: 7px;
 }
 
-.button button{
-    padding: 5px;
+.button button {
+    padding: 10px;
+}
+
+.items {
+    padding: 10px;
+}
+
+.eee .gambar-li {
+    display: block;
+    object-fit: cover;
+    margin-inline: auto;
+    height: 100%;
+}
+
+.eee {
+    overflow: hidden;
+    object-fit: cover;
+
+}
+
+/* ini untuk tablet */
+@media screen and (min-width: 768px) {
+    .ini-ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+
+    .ini-ul li {
+        width: 100%;
+    }
+}
+
+/* laptop */
+@media screen and (min-width: 1024px) {
+    .ini-ul {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+}
+
+/* lebih gede */
+@media screen and (min-width: 1200px) {
+    .ini-ul {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
 }
