@@ -190,14 +190,13 @@ $jualansepatu = [
                             <div class="harga" style="margin-top:-20px !important;"> <?= "Rp" . number_format($product['hargasepatu'], 2) ?> <br>
                             </div>
                         </div>
-                        <div class="button" style="margin-top:10px;">
-                            <button type="button" style="padding:2px 10px; background-color:yellow; border:2px solid grey; font-size:12px;">
-                                <i class="fa fa-shopping-cart" style="font-size:11px; margin-right:5   px;" aria-hidden="true"></i> Langsung Beli
+                        <div class="button">
+                            <button type="button">
+                                <i class="fa fa-shopping-cart"" aria-hidden="true"></i> Langsung Beli
                             </button>
-                            <button type="button" style="padding:2px 10px; background-color:yellow; border:2px solid grey; font-size:12px;"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                            <button type="button"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                                 Masukkan Keranjang</button>
                         </div>
-
                     </li>
                 <?php endforeach ?>
             </ul>

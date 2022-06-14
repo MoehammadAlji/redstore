@@ -368,129 +368,29 @@ select:focus {
 
 
 /*========== PRODUCT ==========*/
-
-.list-product ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+.list-product {
+    max-width: 1200px;
+    width: 90%;
+    margin-inline: auto;
 }
 
-.list-product ul li {
-    display: flex;
-    flex-direction: row;
-    border: 1px solid;
-    width: 46%;
-    margin: 1rem auto;
-    align-items: center;
-    gap: 0.3rem;
-    background-color: #7BF965;
-    border-radius: 0px 10px 0px 50px;
-    flex-wrap: wrap;
-    padding: 10px;
+.ini-ul li {
+    border: 1px solid red;
+    margin-bottom: 1rem;
 }
 
-.list-product ul li img {
-    width: 100%;
-    /* height: auto; */
-    /* height: 200px; */
-    height: 100%;
-    /* margin: 10px; */
+.button{
+    padding:5px 10px;
+
+}
+
+.button button, .button a{
     display: block;
+    margin-bottom: 10px;
+    width: 180px;
+    margin-inline: auto;
 }
 
-.kuas {
-    width: 200px;
-    height: 170px;
-    flex-basis: 40%;
-}
-
-.kuas .container {
-    display: grid;
-    overflow: hidden;
-    border-radius: 20px 20px 20px 20px;
-    place-items: center;
-    width: 200px;
-    height: 200px;
-}
-
-.items {
-    font-size: 14px;
-    flex-basis: 50%;
-}
-
-.list-product li {
-    transition: transform 0.5s;
-}
-
-.list-product li:hover {
-    transform: translateY(-10px);
-}
-
-.button {
-    margin: 10px auto;
-    transition: transform 0.5s;
-}
-
-.buttonL:hover {
-    transform: translateY(-10px);
-}
-
-
-/* ========== FOR MEDIA QUERY MENU MORE THAN 800 ==========*/
-
-@media only screen and (max-width: 800px) {
-    nav ul {
-        position: absolute;
-        top: 70px;
-        left: 0;
-        background: #333;
-        width: 100%;
-        overflow: hidden;
-        transition: max-heigt 0.5s;
-    }
-    nav ul li {
-        display: block;
-        margin-right: 50px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-    nav ul li a {
-        color: #fff;
-    }
-    .menu-icon {
-        display: block;
-        cursor: pointer;
-    }
-    .list-product ul li {
-        width: 60%;
-    }
-    /* .list-product ul li img {
-        width: 25px;
-        height: 10px;
-    } */
-}
-
-
-/* ========== FOR MEDIA QUERY MENU LESS THAN 600==========*/
-
-@media only screen and (max-width: 600px) {
-    .row {
-        text-align: center;
-    }
-    .col-2,
-    .col-3,
-    .col-4 {
-        flex-basis: 100%;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .row {
-        text-align: center;
-    }
-    .col-2,
-    .col-3,
-    .col-4 {
-        flex-basis: 100%;
-    }
+.button button{
+    padding: 5px;
 }

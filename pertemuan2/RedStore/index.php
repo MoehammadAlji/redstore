@@ -88,11 +88,11 @@ $jualansepatu = [
 
     <section class="aaaa">
         <div class="list-product">
-            <ul>
+            <ul class="ini-ul">
                 <?php foreach ($jualansepatu as $product) : ?>
                     <li>
                         <div class="eee">
-                            <img src="<?= $product['gambar'] ?>">
+                            <img src="<?= $product['gambar'] ?>" class="gambar">
                         </div>
                         <div class="items">
                             <strong><?= $product['namasepatu'] ?></strong>
@@ -110,12 +110,16 @@ $jualansepatu = [
                             <div class="harga" style="margin-top:-20px !important;"> <?= "Rp" . number_format($product['hargasepatu'], 2) ?> <br>
                             </div>
                         </div>
-                        <div class="button" style="margin-top:10px !important;">
-                            <button type="button" style="padding:2px 10px; background-color:yellow; border:2px solid grey; font-size:12px;">
-                                <i class="fa fa-shopping-cart" style="font-size:11px; margin-right:5   px;" aria-hidden="true"></i> Langsung Beli
+                        <div class="button">
+                            <button type="button">
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i> Langsung Beli
                             </button>
-                            <a href="product.php"><button type="button" style="padding:2px 10px; background-color:yellow; border:2px solid grey; font-size:12px;"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                                    Masukkan Keranjang</button></a>
+                            <a href="product.php">
+                                <button type="button">
+                                    <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                                    Masukkan Keranjang
+                                </button>
+                            </a>
                         </div>
 
                     </li>
