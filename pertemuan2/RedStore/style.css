@@ -151,7 +151,7 @@ h4 {
 }
 
 .col-4 {
-    font-family: 14px;
+    font-size: 14px;
 }
 
 .rating .fa {
@@ -428,6 +428,11 @@ select:focus {
 
 .button {
     margin: 10px auto;
+    transition: transform 0.5s;
+}
+
+.buttonL:hover {
+    transform: translateY(-10px);
 }
 
 
