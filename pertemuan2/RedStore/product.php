@@ -1,126 +1,11 @@
 <?php
-$jualansepatu = [
-    [
-        "gambar"         => "img/RUN FALCON 2.0.jpeg",
-        "namasepatu"     => "RUN FALCON 2.0",
-        "mereksepatu"    => "Adidas",
-        "bahansepatu"    => ["karet", "kain"],
-        "hargasepatu"    => 850000,
-        "cocokuntuk"     => ["lari", "Jogging"]
-    ],
-    [
-        "gambar"         => "img/sepatu literacer.jpeg",
-        "namasepatu"     => "LITE RACER ADAPT 4.0",
-        "mereksepatu"    => "Adidas",
-        "bahansepatu"    => ["karet", "kain"],
-        "hargasepatu"    => 1200000,
-        "cocokuntuk"     => ["lari", "Jogging"]
-    ],
-    [
-        "gambar"         => "img/SEPATU ADIDAS 4DFWD X PARLEY.jpeg",
-        "namasepatu"     => "4DFWD X PARLEY",
-        "mereksepatu"    => "Adidas",
-        "bahansepatu"    => ["karet", "kain"],
-        "hargasepatu"    => 4000000,
-        "cocokuntuk"     => ["lari", "Jogging"]
-    ],
-    [
-        "gambar"         => "img/ULTRABOOST.jpeg",
-        "namasepatu"     => "ULTRABOOST 22 HEAT ROY",
-        "mereksepatu"    => "Adidas",
-        "bahansepatu"    => ["karet", "kain"],
-        "hargasepatu"    => 3300000,
-        "cocokuntuk"     => ["lari", "Jogging"]
-    ],
-    [
-        "gambar"         => "img/slip on.jpeg",
-        "namasepatu"     => "TERREX VOYAGER SLIP-ON",
-        "mereksepatu"    => "Adidas",
-        "bahansepatu"    => ["karet", "kain"],
-        "hargasepatu"    => 1300000,
-        "cocokuntuk"     => ["lari", "jalan di tempat becek"]
-    ],
-    [
-        "gambar"         => "img/predatoredge.jpeg",
-        "namasepatu"     => "PREDATOR EDGE.3 INDOOR",
-        "mereksepatu"    => "Adidas",
-        "bahansepatu"    => ["karet", "plastik"],
-        "hargasepatu"    => 1300000,
-        "cocokuntuk"     => ["lari", "main sepak bola"]
-    ],
-    [
-        "gambar"         => "img/trae young 1.jpeg",
-        "namasepatu"     => "TRAE YOUNG 1.0",
-        "mereksepatu"    => "Adidas",
-        "bahansepatu"    => ["karet", "kain"],
-        "hargasepatu"    => 1300000,
-        "cocokuntuk"     => ["jalan-jalan", " main basket"]
-    ],
-    [
-        "gambar"         => "img/pro model 2g low.jpeg",
-        "namasepatu"     => "PRO MODEL 2G LOW",
-        "mereksepatu"    => "Adidas",
-        "bahansepatu"    => ["karet", "kain"],
-        "hargasepatu"    => 1520000,
-        "cocokuntuk"     => ["lari", "Main basket"]
-    ],
-    [
-        "gambar"         => "img/sandal adilette.jpeg",
-        "namasepatu"     => "SLIDES ADILETTE",
-        "mereksepatu"    => "Adidas",
-        "bahansepatu"    => ["karet",],
-        "hargasepatu"    => 600000,
-        "cocokuntuk"     => ["jalan-jalan", "dipakai dirumah"]
-    ],
-    [
-        "gambar"         => "img/se[atutenis.jpeg",
-        "namasepatu"     => "ADIZERO UBERSONIC 4",
-        "mereksepatu"    => "Adidas",
-        "bahansepatu"    => ["karet", "kain"],
-        "hargasepatu"    => 2200000,
-        "cocokuntuk"     => ["main tenis", "main badminton"]
-    ],
-    [
-        "gambar"         => "img/sepatu literacer.jpeg",
-        "namasepatu"     => "AIRMAX 270",
-        "mereksepatu"    => "Nike",
-        "bahansepatu"    => ["Fiber", "Karet"],
-        "hargasepatu"    => 2428000,
-        "cocokuntuk"     => ["jalan santai", "Jogging", "Berlari"]
-    ],
-    [
-        "gambar"         => "img/sepatu literacer.jpeg",
-        "namasepatu"     => "'DEMON' LIL NAS X",
-        "mereksepatu"    => "Nike",
-        "bahansepatu"    => ["karet", "Fiber", "busa"],
-        "hargasepatu"    => 14700000,
-        "cocokuntuk"     => ["berlari", "cosplay jadi pemuja setan",]
-    ],
-    [
-        "gambar"         => "img/sepatu literacer.jpeg",
-        "namasepatu"     => "AIR VAPORMAX",
-        "mereksepatu"    => "Nike",
-        "bahansepatu"    => ["karet", "Fiber", " plastik"],
-        "hargasepatu"    => 2950000,
-        "cocokuntuk"     => ["berlari", "Jogging"]
-    ],
-    [
-        "gambar"         => "img/sepatu literacer.jpeg",
-        "namasepatu"     => "AIR-JORDAN",
-        "mereksepatu"    => "Nike",
-        "bahansepatu"    => ["Busa", "karet", "kulit sintesis"],
-        "hargasepatu"    => 2200000,
-        "cocokuntuk"     => ["main tenis", "main badminton"]
-    ],
-    [
-        "gambar"         => "img/sepatu literacer.jpeg",
-        "namasepatu"     => "FUTURISTIC MK-01 FOTWEAR",
-        "mereksepatu"    => "Tidak diketahui",
-        "bahansepatu"    => ["besi", "plastik", "kain"],
-        "hargasepatu"    => "tidak diketahui",
-        "cocokuntuk"     => ["Pajangan", "Pamer", "jalan santai"]
-    ],
-];
+require_once "koneksi.php";
+
+$sql = "SELECT * from products";
+
+$value_tnn = mysqli_query($koneksi, $sql); // cara ambil data dr sql
+$products = mysqli_fetch_all($value_tnn, MYSQLI_ASSOC); //merubah data sql jadi array
+
 ?>
 <html lang="en">
 
@@ -164,15 +49,13 @@ $jualansepatu = [
             </select>
         </div>
     </div>
-    <section class="aaaa">
+    <!-- <section class="aaaa">
         <div class="list-product">
-            <ul>
+            <ul class="ini-ul">
                 <?php foreach ($jualansepatu as $product) : ?>
                     <li>
-                        <div class="kuas">
-                            <div class="container" >
-                            <img src="<?= $product['gambar'] ?>">
-                            </div>
+                        <div class="eee">
+                            <img src="<?= $product['gambar'] ?>" class="gambar-li">
                         </div>
                         <div class="items">
                             <strong><?= $product['namasepatu'] ?></strong>
@@ -192,25 +75,31 @@ $jualansepatu = [
                         </div>
                         <div class="button">
                             <button type="button">
-                                <i class="fa fa-shopping-cart"" aria-hidden="true"></i> Langsung Beli
+                                <i class="fa fa-shopping-cart" aria-hidden="true"></i> Langsung Beli
                             </button>
-                            <button type="button"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                                Masukkan Keranjang</button>
+                            <a href="product.php">
+                                <button type="button">
+                                    <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
+                                    Masukkan Keranjang
+                                </button>
+                            </a>
                         </div>
                     </li>
                 <?php endforeach ?>
             </ul>
         </div>
-    </section>
+    </section> -->
+    <?php include "partials/item-loop.php" ?>
 
-    <div class="page-btn">
+
+    <!-- PAGINATION -->
+    <!-- <div class="page-btn">
         <span>1</span>
         <span>2</span>
         <span>3</span>
         <span>4</span>
         <span>&#8594;</span>
-    </div>
-    </div>
+    </div> -->
     <!-- footer -->
     <?php include 'partials/footer.html'; ?>
 

@@ -1,54 +1,11 @@
 <?php
-$jualansepatu = [
-    [
-        "gambar"         => "img/RUN FALCON 2.0.jpeg",
-        "namasepatu"     => "SEPATU RUN FALCON 2.0",
-        "mereksepatu"    => "Adidas",
-        "bahansepatu"    => ["karet", "kain"],
-        "hargasepatu"    => 850000,
-        "cocokuntuk"     => ["berlari", "Jogging"]
-    ],
-    [
-        "gambar"         => "img/sepatu literacer.jpeg",
-        "namasepatu"     => "SEPATU LITE RACER ADAPT 4.0",
-        "mereksepatu"    => "Adidas",
-        "bahansepatu"    => ["karet", "kain"],
-        "hargasepatu"    => 1200000,
-        "cocokuntuk"     => ["berlari", "Jogging"]
-    ],
-    [
-        "gambar"         => "img/SEPATU ADIDAS 4DFWD X PARLEY.jpeg",
-        "namasepatu"     => "SEPATU 4DFWD X PARLEY",
-        "mereksepatu"    => "Adidas",
-        "bahansepatu"    => ["karet", "kain"],
-        "hargasepatu"    => 4000000,
-        "cocokuntuk"     => ["berlari", "Jogging"]
-    ],
-    [
-        "gambar"         => "img/ULTRABOOST.jpeg",
-        "namasepatu"     => "SEPATU ULTRABOOST 22 HEAT ROY",
-        "mereksepatu"    => "Adidas",
-        "bahansepatu"    => ["karet", "kain"],
-        "hargasepatu"    => 3300000,
-        "cocokuntuk"     => ["berlari", "Jogging"]
-    ],
-    [
-        "gambar"         => "img/slip on.jpeg",
-        "namasepatu"     => "SEPATU TERREX VOYAGER SLIP-ON",
-        "mereksepatu"    => "Adidas",
-        "bahansepatu"    => ["karet", "kain"],
-        "hargasepatu"    => 1300000,
-        "cocokuntuk"     => ["berlari", "berjalan di tempat becek"]
-    ],
-    [
-        "gambar"         => "img/predatoredge.jpeg",
-        "namasepatu"     => "SEPATU PREDATOR EDGE.3 INDOOR",
-        "mereksepatu"    => "Adidas",
-        "bahansepatu"    => ["karet", "plastik"],
-        "hargasepatu"    => 1300000,
-        "cocokuntuk"     => ["berlari", "bermain sepak bola"]
-    ],
-];
+require_once "koneksi.php";
+
+$sql = "SELECT * from products";
+
+$value_tnn = mysqli_query($koneksi, $sql); // cara ambil data dr sql
+$products = mysqli_fetch_all($value_tnn, MYSQLI_ASSOC); //merubah data sql jadi array
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,29 +42,24 @@ $jualansepatu = [
     ?>
     <!-- featured products -->
     <h2 class="title">A few product from our store</h2>
-
+    <!-- Items -->
     <section class="aaaa">
         <div class="list-product">
             <ul class="ini-ul">
-                <?php foreach ($jualansepatu as $product) : ?>
+                <?php foreach ($products as $product) : ?>
+                    <?php if ($product['image'] == "img/slip on.jpeg") {
+                        break;
+                    }?>
                     <li>
                         <div class="eee">
-                            <img src="<?= $product['gambar'] ?>" class="gambar-li">
+                            <img src="<?= $product['image'] ?>" class="gambar-li">
                         </div>
                         <div class="items">
-                            <strong><?= $product['namasepatu'] ?></strong>
+                            <strong><?= $product['name'] ?></strong>
                             <hr>
-                            <strong><?= $product['mereksepatu'] ?></strong>
-                            <br>
-                            Bahan :
-                            <?php foreach ($product['bahansepatu'] as $bahansepatu) : ?>
-                                <?= $bahansepatu . ", "; ?>
-                            <?php endforeach ?> <br>
-                            fungsi :
-                            <?php foreach ($product['cocokuntuk'] as $cocokuntuk) : ?>
-                                <?= $cocokuntuk . ", "; ?>
-                            <?php endforeach ?> <br><br>
-                            <div class="harga" style="margin-top:-20px !important;"> <?= "Rp" . number_format($product['hargasepatu'], 2) ?> <br>
+                            <strong><?= $product['brand'] ?></strong>
+                            <br> <br>
+                            <div class="harga" style="margin-top:-20px !important;"> <?= "Rp" . number_format($product['price'], 2) ?> <br>
                             </div>
                         </div>
                         <div class="button">
@@ -121,17 +73,11 @@ $jualansepatu = [
                                 </button>
                             </a>
                         </div>
-
                     </li>
                 <?php endforeach ?>
             </ul>
         </div>
     </section>
-
-
-
-    <!-- offer -->
-
     <!-- Testimonial -->
     <?php include 'partials/testimonial.html'; ?>
     <!-- Brands -->
