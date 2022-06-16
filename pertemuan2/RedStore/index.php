@@ -49,7 +49,7 @@ $products = mysqli_fetch_all($value_tnn, MYSQLI_ASSOC); //merubah data sql jadi 
                 <?php foreach ($products as $product) : ?>
                     <?php if ($product['image'] == "img/slip on.jpeg") {
                         break;
-                    }?>
+                    } ?>
                     <li>
                         <div class="eee">
                             <img src="<?= $product['image'] ?>" class="gambar-li">
@@ -63,15 +63,8 @@ $products = mysqli_fetch_all($value_tnn, MYSQLI_ASSOC); //merubah data sql jadi 
                             </div>
                         </div>
                         <div class="button">
-                            <button type="button">
-                                <i class="fa fa-shopping-cart" aria-hidden="true"></i> Langsung Beli
-                            </button>
-                            <a href="product.php">
-                                <button type="button">
-                                    <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                                    Masukkan Keranjang
-                                </button>
-                            </a>
+                            <a href="beli.php"> <button type="button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Langsung Beli</button></a>
+                            <a href="keranjang.php"><button type="button"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>Masukkan Keranjang</button></a>
                         </div>
                     </li>
                 <?php endforeach ?>

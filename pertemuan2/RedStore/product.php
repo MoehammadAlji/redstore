@@ -43,13 +43,10 @@ $products = mysqli_fetch_all($value_tnn, MYSQLI_ASSOC); //merubah data sql jadi 
             <select name="" id="">
                 <option value="">Default shorting</option>
                 <option value="">Short by price</option>
-                <option value="">short by popularity</option>
-                <option value="">short by rating</option>
-                <option value="">short by sale</option>
             </select>
         </div>
     </div>
-    <!-- <section class="aaaa">
+    <section class="aaaa">
         <div class="list-product">
             <ul class="ini-ul">
                 <?php foreach ($jualansepatu as $product) : ?>
@@ -74,21 +71,14 @@ $products = mysqli_fetch_all($value_tnn, MYSQLI_ASSOC); //merubah data sql jadi 
                             </div>
                         </div>
                         <div class="button">
-                            <button type="button">
-                                <i class="fa fa-shopping-cart" aria-hidden="true"></i> Langsung Beli
-                            </button>
-                            <a href="product.php">
-                                <button type="button">
-                                    <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
-                                    Masukkan Keranjang
-                                </button>
-                            </a>
+                            <a href="beli.php"> <button type="button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Langsung Beli</button></a>
+                            <a href="keranjang.php"><button type="button"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>Masukkan Keranjang</button></a>
                         </div>
                     </li>
                 <?php endforeach ?>
             </ul>
         </div>
-    </section> -->
+    </section>
     <?php include "partials/item-loop.php" ?>
 
 
