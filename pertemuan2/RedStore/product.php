@@ -1,5 +1,5 @@
 <?php
-require_once "koneksi.php";
+require "koneksi.php";
 
 $sql = "SELECT * from products";
 
@@ -35,52 +35,21 @@ $products = mysqli_fetch_all($value_tnn, MYSQLI_ASSOC); //merubah data sql jadi 
 
 <body>
     <!-- navbar -->
-    <?php include 'partials/navbar.html' ?>
+    <?php include 'partials/navbar.php' ?>
     <!-- featured products -->
     <div class="small-container">
         <div class="row row-2">
-            <h2>All product</h2>
-            <select name="" id="">
+            <h2 class="title">All product</h2>
+            <!-- <select name="" id="">
                 <option value="">Default shorting</option>
                 <option value="">Short by price</option>
-            </select>
+            </select> -->
         </div>
     </div>
-    <section class="aaaa">
-        <div class="list-product">
-            <ul class="ini-ul">
-                <?php foreach ($jualansepatu as $product) : ?>
-                    <li>
-                        <div class="eee">
-                            <img src="<?= $product['gambar'] ?>" class="gambar-li">
-                        </div>
-                        <div class="items">
-                            <strong><?= $product['namasepatu'] ?></strong>
-                            <hr>
-                            <strong><?= $product['mereksepatu'] ?></strong>
-                            <br>
-                            Bahan :
-                            <?php foreach ($product['bahansepatu'] as $bahansepatu) : ?>
-                                <?= $bahansepatu . ", "; ?>
-                            <?php endforeach ?> <br>
-                            fungsi :
-                            <?php foreach ($product['cocokuntuk'] as $cocokuntuk) : ?>
-                                <?= $cocokuntuk . ", "; ?>
-                            <?php endforeach ?> <br><br>
-                            <div class="harga" style="margin-top:-20px !important;"> <?= "Rp" . number_format($product['hargasepatu'], 2) ?> <br>
-                            </div>
-                        </div>
-                        <div class="button">
-                            <a href="beli.php"> <button type="button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Langsung Beli</button></a>
-                            <a href="keranjang.php"><button type="button"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>Masukkan Keranjang</button></a>
-                        </div>
-                    </li>
-                <?php endforeach ?>
-            </ul>
-        </div>
-    </section>
-    <?php include "partials/item-loop.php" ?>
 
+    <!-- item=-loop -->
+
+  <?php include "partials/item-loop.php"?>
 
     <!-- PAGINATION -->
     <!-- <div class="page-btn">
@@ -91,7 +60,7 @@ $products = mysqli_fetch_all($value_tnn, MYSQLI_ASSOC); //merubah data sql jadi 
         <span>&#8594;</span>
     </div> -->
     <!-- footer -->
-    <?php include 'partials/footer.html'; ?>
+    <?php include 'partials/footer.php'; ?>
 
 </body>
 

@@ -34,11 +34,11 @@ $products = mysqli_fetch_all($value_tnn, MYSQLI_ASSOC); //merubah data sql jadi 
 
 <body>
     <div class="header">
-        <?php include 'partials/navbar.html' ?>
-        <?php include 'partials/landing-page.html'; ?>
+        <?php include 'partials/navbar.php' ?>
+        <?php include 'partials/landing-page.php'; ?>
     </div>
     <!-- featured category -->
-    <?php //include 'partials/featured-category.html'; 
+    <?php //include 'partials/featured-category.php'; 
     ?>
     <!-- featured products -->
     <h2 class="title">A few product from our store</h2>
@@ -63,20 +63,22 @@ $products = mysqli_fetch_all($value_tnn, MYSQLI_ASSOC); //merubah data sql jadi 
                             </div>
                         </div>
                         <div class="button">
-                            <a href="beli.php"> <button type="button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Langsung Beli</button></a>
-                            <a href="keranjang.php"><button type="button"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>Masukkan Keranjang</button></a>
+                            <a href="beli.php?id= <?= $product['id_product']; ?>"> <button type="button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Langsung Beli</button></a>
+                            <a href="keranjang.php?id= <?= $product['id_product']; ?>"><button type="button"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>Masukkan Keranjang</button></a>
                         </div>
                     </li>
                 <?php endforeach ?>
             </ul>
         </div>
     </section>
-    <!-- Testimonial -->
-    <?php include 'partials/testimonial.html'; ?>
-    <!-- Brands -->
-    <?php include 'partials/brands.html'; ?>
 
-    <?php include 'partials/footer.html'; ?>
+    <!-- <?php include "item-loop.php"?> -->
+    <!-- Testimonial -->
+    <?php include 'partials/testimonial.php'; ?>
+    <!-- Brands -->
+    <?php include 'partials/brands.php'; ?>
+
+    <?php include 'partials/footer.php'; ?>
 
 </body>
 

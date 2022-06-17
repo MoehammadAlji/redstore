@@ -32,7 +32,8 @@ nav ul li {
 
 a {
     text-decoration: none;
-    color: #555;
+    color: rgb(239, 135, 135);
+
 }
 
 p {
@@ -383,10 +384,10 @@ select:focus {
     max-width: 350px;
     margin-inline: auto;
     grid-template-rows: 1.5fr 1fr 100px;
-    grid-template-rows: 250px 180px 120px ;
+    grid-template-rows: 250px 180px 120px;
     overflow: hidden;
     font-size: 14px;
-    
+
 }
 
 .button {
@@ -427,6 +428,162 @@ select:focus {
 
 }
 
+/*========== PEMBAYARAN ==========*/
+.konten .container table {
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+
+.konten .container table tr th {
+    border: 2px solid black;
+    padding: 8px 25px;
+}
+
+.konten .container table thead tr {
+    background-color: rgb(239, 135, 135);
+    ;
+}
+
+.konten .container table tbody tr td {
+    padding: 8px;
+}
+
+#bruh {
+    background-color: rgb(239, 135, 135);
+    ;
+    padding: 8px 8px;
+}
+
+.konten {
+    margin-bottom: 121px;
+}
+
+.table {
+    text-align: center;
+    margin: 0 auto 30px;
+    position: relative;
+}
+
+.konten .container a button {
+    background-color: rgb(239, 135, 135);
+    ;
+    border-color: black;
+    color: black;
+    padding: 3px;
+    margin-right: 10px;
+    border-radius: 7px;
+    margin-inline: auto;
+}
+
+
+
+/*========== LOGIN ==========*/
+.hero {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(img/banner.jpg);
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+}
+
+.form-box {
+    width: 380px;
+    height: 480px;
+    position: relative;
+    background: #fff;
+    margin: 75px auto 10px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+.button-box {
+    width: 190px;
+    margin: 35px auto;
+    position: relative;
+    display: flex;
+    justify-content: space-around   ;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 30px;
+}
+
+.toggle-btn {
+    padding: 10px 20px;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    outline: none;
+    position: relative;
+}
+
+#login-button{
+    padding-right:40px;
+    padding-left: 27px;
+}
+
+#btn {
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 90px;
+    height: 100%;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+.input-group {
+    top: 120px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top: 0;
+    border-right: 0;
+    border-bottom: 1px solid #999;
+    outline: none;
+    background: transparent;
+}
+
+.submit-btn {
+    width: 85%;
+    padding: 10px 30px;
+    cursor: pointer;
+    display: block;
+    margin: auto;
+    background: linear-gradient(to right, #ff105f, #ffad06);
+    border: 0;
+    outline: none;
+    border-radius: 30px;
+}
+
+.check-box {
+    margin: 30px 10px 30px 0;
+}
+
+.input-group span {
+    color: #777;
+    font-size: 12px;
+    bottom: 68px;
+    position: absolute;
+}
+
+#login {
+    left: 50px;
+}
+
+#register {
+    left: 450px;
+}
+
+
 /* ini untuk tablet */
 @media screen and (min-width: 768px) {
     .ini-ul {
@@ -445,7 +602,8 @@ select:focus {
     .ini-ul {
         grid-template-columns: 1fr 1fr 1fr;
     }
-    .ini-ul li{
+
+    .ini-ul li {
         height: 100%;
     }
 
