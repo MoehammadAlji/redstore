@@ -15,6 +15,11 @@ body {
     /* position: fixed; */
 }
 
+.navbar a i {
+    font-size: 30px;
+    color: #563434;
+}
+
 nav {
     flex: 1;
     text-align: right;
@@ -415,6 +420,11 @@ select:focus {
     padding: 10px;
 }
 
+.items a button{
+    /* align-items: flex-start; */
+    text-align: end;
+}
+
 .eee .gambar-li {
     display: block;
     object-fit: cover;
@@ -441,7 +451,7 @@ select:focus {
 
 .konten .container table thead tr {
     background-color: rgb(239, 135, 135);
-    ;
+
 }
 
 .konten .container table tbody tr td {
@@ -450,7 +460,6 @@ select:focus {
 
 #bruh {
     background-color: rgb(239, 135, 135);
-    ;
     padding: 8px 8px;
 }
 
@@ -475,6 +484,17 @@ select:focus {
     margin-inline: auto;
 }
 
+.konten .container table tbody tr td a button {
+    background-color: rgb(243, 25, 25);
+    border-color: black;
+    color: black;
+    padding: 3px;
+    margin-right: 10px;
+    border-radius: 7px;
+    margin-inline: auto;
+}
+
+
 
 
 /*========== LOGIN ==========*/
@@ -489,7 +509,7 @@ select:focus {
 
 .form-box {
     width: 380px;
-    height: 480px;
+    height: 500px;
     position: relative;
     background: #fff;
     margin: 75px auto 10px;
@@ -502,7 +522,7 @@ select:focus {
     margin: 35px auto;
     position: relative;
     display: flex;
-    justify-content: space-around   ;
+    justify-content: space-around;
     box-shadow: 0 0 20px 9px #ff61241f;
     border-radius: 30px;
 }
@@ -516,8 +536,8 @@ select:focus {
     position: relative;
 }
 
-#login-button{
-    padding-right:40px;
+#login-button {
+    padding-right: 40px;
     padding-left: 27px;
 }
 
@@ -537,7 +557,6 @@ select:focus {
     position: absolute;
     width: 280px;
     transition: .5s;
-
 }
 
 .input-field {
@@ -581,6 +600,228 @@ select:focus {
 
 #register {
     left: 450px;
+}
+
+/*========== CHECK OUT ==========*/
+.data-pembeli {
+    /* text-align: center; */
+    margin-left: 320px;
+    /* border: 1px solid black; */
+    width: 50%;
+    /* padding: 5px; */
+
+}
+
+.data-pembeli input {
+    /* margin-right: ; */
+    /* background-color:#e8b7b7; */
+    border-radius: 5px;
+    border: none;
+    font-size: 17px;
+    margin: 10px;
+    /* border: 1px solid black; */
+}
+
+.data-pembeli select {
+    padding: 5px;
+    width: 50%;
+}
+
+.checkout {
+    padding: 3px;
+    background-color: rgb(102, 243, 102);
+    border: none;
+    border: 1.5px solid black;
+    border-radius: 5px;
+    margin-left: 20px;
+}
+
+
+/*========== ADD NEW PRODUCT ==========*/
+
+
+.image-background {
+    /* background-image: url(./img/banner.jpg); */
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: absolute;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(img/wallpaper.jpg);
+}
+
+.form-box-add {
+    width: 380px;
+    height: 600px;
+    position: relative;
+    background: #fff;
+    margin: 15px auto;
+    padding: 50px;
+    overflow: hidden;
+    border-radius: 10% 10px 0 0;
+    border: 5px solid #999;
+}
+
+.input-group-add {
+    top: 20px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+
+/* .insert-product{
+} */
+
+.insert-product input {
+    width: 100%;
+    /* background-color: #3cec36; */
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: none;
+    /* border-bottom-left-radius: -5px; */
+    /* position: absolute; */
+}
+
+.border input {
+    border: none;
+    border-left: 0;
+    border-top: 0;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    height: 20px;
+    font-size: 14px;
+}
+
+.border input:focus {
+    outline: none;
+}
+
+.photo {
+    border: none;
+}
+
+.btn-add-product {
+    top: 0;
+    left: 0;
+    width: 110px;
+    height: 30px;
+    background: linear-gradient(to right, #75ff53, #fcff61);
+    border-radius: 30px;
+    position: relative;
+    margin: 0 80px;
+}
+
+/*========== ADD NEW PRODUCT (PRODUCT PAGE)==========*/
+
+.button-product-box {
+    width: 190px;
+    margin: 35px auto;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 0 20px 9px #ff61241f;
+    border-radius: 30px;
+}
+
+.button-product-box a button {
+    background: linear-gradient(to right, #3cec36, #ffad06);
+    border-radius: 10px;
+
+}
+
+.button-product-box a button:hover {
+    background: linear-gradient(to right, #3cec36, #ffad06);
+    border-radius: 10px;
+    width: 190px;
+}
+
+/*========== ERROR PAGE ==========*/
+.error-page {
+    text-align: center;
+}
+
+.error-button button {
+    background-color: var(--G500, #03AC0E);
+    border: none;
+    margin-top: 15px;
+    border-radius: 8px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 12px;
+    height: 35px;
+    outline: none;
+    position: relative;
+    padding: 0px 16px;
+    text-align: center;
+}
+
+.error-page img {
+    margin-bottom: 30px;
+    width: 300px;
+    height: 300px;
+}
+
+/*========== UPDATE PAGE ==========*/
+
+
+.container-form-box-update {
+    width: 380px;
+    height: 800px;
+    position: relative;
+    background: #fff;
+    margin: 15px auto;
+    padding: 50px;
+    /* overflow: hidden; */
+    border-radius: 10% 10px 0 0;
+    border: 5px solid #999;
+}
+
+.input-group-update {
+    top: 20px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+
+.insert-product form{
+    display: inline-block;
+}
+
+.insert-product input {
+    width: 100%;
+    /* background-color: #3cec36; */
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border: none;
+    /* border-bottom-left-radius: -5px; */
+    /* position: absolute; */
+}
+
+.border input {
+    border: none;
+    border-left: 0;
+    border-top: 0;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    height: 20px;
+    font-size: 14px;
+}
+
+.border input:focus {
+    outline: none;
+}
+.btn-update-product {
+    top: 0;
+    left: 0;
+    width: 110px;
+    height: 30px;
+    background: linear-gradient(to right, #75ff53, #fcff61);
+    border-radius: 30px;
+    position: relative;
+    margin: 0 80px;
 }
 
 

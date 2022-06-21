@@ -49,7 +49,15 @@ $products = mysqli_fetch_all($value_tnn, MYSQLI_ASSOC); //merubah data sql jadi 
 
     <!-- item=-loop -->
 
-  <?php include "partials/item-loop.php"?>
+    <?php include "partials/item-loop.php" ?>
+
+    <div class="button-product-box">
+        <a href="tambahproduk.php">
+            <button type="button">
+                Add New Product
+            </button>
+        </a>
+    </div>
 
     <!-- PAGINATION -->
     <!-- <div class="page-btn">

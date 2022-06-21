@@ -1,12 +1,22 @@
 <?php
 require_once "koneksi.php";
 
-$sql = "SELECT * from products";
+$sql = "SELECT * from products LIMIT 4";
 
 $value_tnn = mysqli_query($koneksi, $sql); // cara ambil data dr sql
 $products = mysqli_fetch_all($value_tnn, MYSQLI_ASSOC); //merubah data sql jadi array
+//     header("location: index.php");
 
 ?>
+
+<?php /* if (isset($_SESSION["customer"])) : ?>
+    <!-- udah login -->
+    <?php  header("location: index.php"); ?>
+    <!-- kalau belum login -->
+<?php else : ?>
+    <?php header("location: login.php"); ?>
+<?php endif */?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -47,9 +57,11 @@ $products = mysqli_fetch_all($value_tnn, MYSQLI_ASSOC); //merubah data sql jadi 
         <div class="list-product">
             <ul class="ini-ul">
                 <?php foreach ($products as $product) : ?>
-                    <?php if ($product['image'] == "img/slip on.jpeg") {
-                        break;
-                    } ?>
+                    <?php
+                    //  if ($product['image'] == "img/terrexvoyagerslip.png") {
+                    //     break;
+                    // }
+                     ?>
                     <li>
                         <div class="eee">
                             <img src="<?= $product['image'] ?>" class="gambar-li">
@@ -64,7 +76,7 @@ $products = mysqli_fetch_all($value_tnn, MYSQLI_ASSOC); //merubah data sql jadi 
                         </div>
                         <div class="button">
                             <a href="beli.php?id= <?= $product['id_product']; ?>"> <button type="button"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Langsung Beli</button></a>
-                            <a href="keranjang.php?id= <?= $product['id_product']; ?>"><button type="button"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>Masukkan Keranjang</button></a>
+                            <a href="beli.php?id= <?= $product['id_product']; ?>"><button type="button"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i>Masukkan Keranjang</button></a>
                         </div>
                     </li>
                 <?php endforeach ?>

@@ -16,7 +16,7 @@ else {
 // print_r($_SESSION);
 // echo "</pre>";
 
-echo "<script> alert('Produl telah ditambahkan kedalam keranjang')</script>";
+// echo "<script> alert('Produl telah ditambahkan kedalam keranjang')</script>";
 echo "<script> location='keranjang.php'</script>";
 
 

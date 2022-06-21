@@ -1,3 +1,9 @@
+<?php
+$ambil = $koneksi->query("SELECT * from products");
+$pecah = $ambil->fetch_assoc();
+?>
+
+
 <section class="aaaa">
     <div class="list-product">
         <ul class="ini-ul">
@@ -8,6 +14,10 @@
                     </div>
                     <div class="items">
                         <strong><?= $product['name'] ?></strong>
+                        <div>
+                            <a href="hapus.php?id=<?php echo $product['id_product'] ?>"><button>Hapus</button></a>
+                            <a href="ubah.php?id=<?php echo $product['id_product'] ?>"><button>Ubah</button></a>
+                        </div>
                         <hr>
                         <strong><?= $product['brand'] ?></strong>
                         <br> <br>

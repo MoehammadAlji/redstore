@@ -1,7 +1,11 @@
 <?php
 require "koneksi.php";
+session_start();
+
 // var_dump($akun['customer']);
+
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +18,8 @@ require "koneksi.php";
 
 <body>
     <div class="hero">
-        <?php // include "partials/navbar.php"; ?>
+        <?php // include "partials/navbar.php"; 
+        ?>
         <div class="form-box">
             <div class="button-box">
                 <div id="btn"></div>
@@ -25,7 +30,7 @@ require "koneksi.php";
                 <input type="text" class="input-field" placeholder="User Id" name="email" required>
                 <input type="password" class="input-field" placeholder="Enter Password" name="password" required>
                 <input type="checkbox" class="check-box"> <span>Remember password</span>
-                <button type="submit" class="submit-btn" name="login">Login</button>
+                <button type="submit" class="submit-btn" name="login" value="login">Login</button>
             </form>
 
             <form method="post" id="register" class="input-group">
@@ -76,19 +81,19 @@ require "koneksi.php";
             $akun = $ambil->fetch_assoc();
             $_SESSION['customer'] = $akun;
             // echo $_SESSION['customer'];
-            
-            echo "<script>alert('Selamat, anda berhasil Login'); </script>";
-            echo "<script>location='checkout.php'</script>";
+
+            // echo "<script>alert('Selamat, anda berhasil Login'); </script>";
+            echo "<script>location='index.php'</script>";
+
+            // header("Location: checkout.php");
         } else {
             echo "<script>alert('Ciee, yang password atau email-nya salah'); </script>";
             echo "<script>location='login.php'</script>";
         }
     }
 
-
     ?>
 
 </body>
 
 </html>
-

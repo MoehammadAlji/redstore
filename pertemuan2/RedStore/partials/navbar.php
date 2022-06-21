@@ -1,7 +1,8 @@
-<?php 
+<?php
 session_start();
-require "koneksi.php"; 
-// echo     
+require "koneksi.php";
+// unset($_SESSION);
+
 
 ?>
 <link rel="stylesheet" href="style.css">
@@ -15,7 +16,8 @@ require "koneksi.php";
 
             <li><a href="index.php">Home</a></li>
             <li><a href="product.php">Products</a></li>
-            <li><a href="keranjang.php">Keranjang</a></li>
+            <!-- <li><a href="keranjang.php">Keranjang</a></li> -->
+            <li><a href="checkout.php">Check out</a></li>
 
             <?php if (isset($_SESSION["customer"])) : ?>
                 <li><a href="logout.php">Log out</a></li>
@@ -26,12 +28,13 @@ require "koneksi.php";
 
 
             <?php endif ?>
-            <li><a href="checkout.php">Check out</a></li>
 
         </ul>
     </nav>
-    <img src="images/cart.png" alt="" width="30px" height="30px">
-    <img src="images/menu.png" alt="" class="menu-icon" onclick="menutoggle()">
+    <!-- <img src="images/cart.png" alt="" width="30px" height="30px"> -->
+    <a href="keranjang.php"><i class="fa fa-shopping-bag" aria-hidden="true" ></i></a>
+
+    <!-- <img src="images/menu.png" alt="" class="menu-icon" onclick="menutoggle()"> -->
 
 
 </div>
