@@ -10,7 +10,7 @@ $pecah = $ambil->fetch_assoc(); //untuk memecah data yang didapat untuk dijadika
 ?>
 <pre>
     <?php
-   // var_dump($pecah);
+    // var_dump($pecah);
     ?>
 </pre>
 
@@ -80,19 +80,19 @@ $pecah = $ambil->fetch_assoc(); //untuk memecah data yang didapat untuk dijadika
     if (!empty($lokasi)) {
         move_uploaded_file($lokasi, "fotoproduk/$photo");
         $koneksi->query("UPDATE products SET image = '$photo', name = '$_POST[name]', price = '$_POST[price]', brand = '$_POST[brand]', description = '$_POST[description]' WHERE id_product = '$_GET[id]'");
-
-    } else {
-        //kalau nggamau ngubah foto
-        $koneksi->query("UPDATE products SET name = '$_POST[name]', price = '$_POST[price]', quantity = '$_POST[quantity]', brand = '$_POST[brand]', description = '$_POST[description]' WHERE id_product = '$_GET[id]'");
-    // var_dump($_POST['name']);
+        // var_dump($coba);
     }
+
+    $koneksi->query("UPDATE products SET name = '$_POST[name]', price = '$_POST[price]', brand = '$_POST[brand]', description = '$_POST[description]' WHERE id_product = '$_GET[id]'");
+
+
 
     header("location: product.php");
 
     ?>
-    
+
 <?php endif ?>
 
-<!-- <?php 
-    // echo "<script>location='index.php'</script>";
-?> -->
+<!-- <?php
+        // echo "<script>location='index.php'</script>";
+        ?> -->

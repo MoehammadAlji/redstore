@@ -57,12 +57,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     foreach ($_SESSION['keranjang'] as $id_product => $jumlah) {
         $koneksi->query("INSERT INTO product_purchasings (id_purchasing, id_product, product_name,  jumlah, purchase_date) VALUES ('$id_pembelian_barusan','$id_product','$productname','$jumlah','$purchase_date')");
+        $koneksi->query("INSERT INTO history_purchasings (id_purchasing, id_product, product_name, id_customer, name_customer, id_shipping, purchase_date, city_name) VALUES ('$id_pembelian_barusan','$id_product','$productname','$id_customer','$name_customer','$id_shipping','$purchase_date','$city_name')");
     }
 
     // echo "haloo";
-    foreach ($_SESSION['keranjang'] as $id_product => $jumlah) {
-        $koneksi->query("INSERT INTO history_purchasings (id_purchasing, id_product, product_name, id_customer, name_customer, id_shipping, purchase_date, city_name) VALUES ('$id_pembelian_barusan','$id_product','$productname','$id_customer','$name_customer','$id_shipping','$purchase_date','$city_name')");
-    }
+    // foreach ($_SESSION['keranjang'] as $id_product => $jumlah) {
+    // }
 
     //mengkosongkan keranjang
     unset($_SESSION['keranjang']);

@@ -40,12 +40,13 @@ require "koneksi.php";
             <!-- <li><a href="keranjang.php">Keranjang</a></li> -->
             <li><a href="checkout.php">Check out</a></li>
 
-            <?php if (isset($_SESSION["customer"])) : ?>
-                <li><a href="logout.php">Log out</a></li>
+            <?php if (!isset($_SESSION["customer"])) : ?>
+                <li><a href="login.php">Login</a></li>
 
                 <!-- kalau belum login -->
             <?php else : ?>
-                <li><a href="login.php">Login</a></li>
+                <li><a href="logout.php">Log out</a></li>
+
 
 
             <?php endif ?>

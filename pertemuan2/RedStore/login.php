@@ -75,21 +75,27 @@ session_start();
         //melakukan kueri apakah akun(email sama password)-nya sama kayak di db
         $email = $_POST["email"];
         $password = $_POST["password"];
-        $ambil = $koneksi->query("SELECT * FROM customers WHERE email_customer='$email' AND password_customer='$password'");
+        $akuncustomer = $koneksi->query("SELECT * FROM customers WHERE email_customer='$email' AND password_customer='$password'");
+        $akunadmin = $koneksi->query("SELECT * FROM admin WHERE username='$email' AND password='$password'");
+
 
         //ngitung akun yang sama (maksudnya apakah ada akun yang email dan password-nya sama dengan yang di DB)
 
-        $akunyangcocok = $ambil->num_rows;
+        $akunyangcocok = $akuncustomer->num_rows;
 
         //jika seandainya ada akun yang sama, bakal di-loginkan
         if ($akunyangcocok == 1) {
             //ayuk login sini sama om :>>>
 
             //mendapatkan akun dlm bentuk array
+            $akun = $akunadmin->fetch_assoc();
             if ($_SESSION['admin'] = $akun) {
-                # code...
+                echo "bismillah";
             }
-            $akun = $ambil->fetch_assoc();
+            die;
+            
+            die;
+            $akun = $akuncustomer->fetch_assoc();
             $_SESSION['customer'] = $akun;
             // echo $_SESSION['customer'];
 
