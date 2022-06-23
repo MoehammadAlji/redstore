@@ -81,7 +81,7 @@ if (empty($_SESSION["keranjang"]) || !isset($_SESSION["keranjang"])) : ?>
                 <a href="product.php"><button>Saya masih ingin Belanja</button></a>
 
                 <?php if (isset($_SESSION["customer"])) : ?>
-                    <a href="checzzkout.php"><button>Ayo Bayar sekarang!</button></a>
+                    <a href="checkout.php"><button>Ayo Bayar sekarang!</button></a>
 
                     <!-- kalau belum login -->
                 <?php else : ?>

@@ -25,7 +25,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     $productname = strtolower($product['name']);
 
-    // print_r($productname);
+
+    // var_dump($_POST); echo "<br>";
+    // var_dump($id_customer); echo "<br>";
+    // var_dump($id_shipping); echo "<br>";
+    // var_dump($totalBeli); echo "<br>";
+    // var_dump($id_payment); echo "<br>";
     // die;
 
 
@@ -35,13 +40,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $city_name = $arrayshipping['city_name'];
 
     $totalBeli = $_POST["total_belanja"] + $cost;
+    // $totalBeli = $_POST["total_belanja"] + $cost;
 
     // echo "hai";
     // die;
 
     // die;
     // $koneksi->query( "INSERT INTO purchasings(id_customer, id_shipping, purchase_date, total) VALUES ($id_customer, $arrayshipping, $purchase_date, $totalBeli) ");
-    if ($koneksi->query("INSERT INTO purchasings(id_customer, id_shipping, total, id_payment) VALUES ($id_customer, $id_shipping, $totalBeli, $id_payment) ") === TRUE) {
+    if ($koneksi->query("INSERT INTO purchasings(id_customer, id_shipping, total, id_payment) VALUES ($id_customer, $id_shipping, $totalBeli, $id_payment)") === TRUE) {
     } else {
         echo "Error: " . $koneksi->error;
     }
@@ -55,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // echo "haloo";
     foreach ($_SESSION['keranjang'] as $id_product => $jumlah) {
-        $koneksi->query("INSERT INTO history_purchasings (id_purchasing, id_product, product_name, id_customer, name_customer, id_shipping, purchase_date, city_name) VALUES ('$id_pembelian_barusan','$id_product','$id_customer','$name_customer','$id_shipping','$purchase_date','$city_name')");
+        $koneksi->query("INSERT INTO history_purchasings (id_purchasing, id_product, product_name, id_customer, name_customer, id_shipping, purchase_date, city_name) VALUES ('$id_pembelian_barusan','$id_product','$productname','$id_customer','$name_customer','$id_shipping','$purchase_date','$city_name')");
     }
 
     //mengkosongkan keranjang
@@ -132,7 +138,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </tfoot>
                 </table>
 
-                <input type="text" name="total_belanja" value="<?= $totalBelanja ?>" hidden>
+                <input type="text" name="total_belanja" value="<?= $totalBelanja ?>" hidden> <!-- //post dari sini -->
                 <?= "Data Pembeli  : " ?>
                 <?= $_SESSION['customer']['name_customer'] . "<br> Nomor Telepon : " . $_SESSION['customer']['telepon_customer'] ?>
 

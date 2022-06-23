@@ -5,12 +5,12 @@ session_start();
 // var_dump($akun['customer']);
 
 
-if (!isset($_SESSION["admin"])) {
-    echo "<script>location='index.php'</script>";
-}else {
-    echo "<script>location='index.php'</script>";
+// if (!isset($_SESSION["admin"])) {
+//     echo "<script>location='index.php'</script>";
+// }else {
+//     echo "<script>location='index.php'</script>";
 
-}
+// }
 
 ?>
 
@@ -86,6 +86,9 @@ if (!isset($_SESSION["admin"])) {
             //ayuk login sini sama om :>>>
 
             //mendapatkan akun dlm bentuk array
+            if ($_SESSION['admin'] = $akun) {
+                # code...
+            }
             $akun = $ambil->fetch_assoc();
             $_SESSION['customer'] = $akun;
             // echo $_SESSION['customer'];
