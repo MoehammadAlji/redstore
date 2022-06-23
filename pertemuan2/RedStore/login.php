@@ -4,6 +4,14 @@ session_start();
 
 // var_dump($akun['customer']);
 
+
+if (!isset($_SESSION["admin"])) {
+    echo "<script>location='index.php'</script>";
+}else {
+    echo "<script>location='index.php'</script>";
+
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -83,7 +91,15 @@ session_start();
             // echo $_SESSION['customer'];
 
             // echo "<script>alert('Selamat, anda berhasil Login'); </script>";
-            echo "<script>location='index.php'</script>";
+            // echo "<script>location='index.php'</script>";
+
+            if (empty($_SESSION["keranjang"]) || !isset($_SESSION["keranjang"])) {
+                echo "<script>alert('checkoutnya kosong, ayok pilih produk dulu ')</script>";
+                echo "<script>location='index.php'</script>";
+                header("location: index.php");
+            } else {
+                header("location: checkout.php");
+            }
 
             // header("Location: checkout.php");
         } else {
