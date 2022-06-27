@@ -57,11 +57,7 @@ $products = mysqli_fetch_all($value_tnn, MYSQLI_ASSOC); //merubah data sql jadi 
         <div class="list-product">
             <ul class="ini-ul">
                 <?php foreach ($products as $product) : ?>
-                    <?php
-                    //  if ($product['image'] == "img/terrexvoyagerslip.png") {
-                    //     break;
-                    // }
-                     ?>
+
                     <li>
                         <div class="eee">
                             <img src="<?= $product['image'] ?>" class="gambar-li">

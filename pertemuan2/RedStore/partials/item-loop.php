@@ -12,12 +12,15 @@ $pecah = $ambil->fetch_assoc();
                     <div class="eee">
                         <img src="<?= $product['image'] ?>" class="gambar-li">
                     </div>
+
                     <div class="items">
                         <strong><?= $product['name'] ?></strong>
-                        <div>
-                            <a href="hapus.php?id=<?php echo $product['id_product'] ?>"><button>Hapus</button></a>
-                            <a href="ubah.php?id=<?php echo $product['id_product'] ?>"><button>Ubah</button></a>
-                        </div>
+                        <?php if (isset($_SESSION["admin"])) : ?>
+                            <div>
+                                <a href="hapus.php?id=<?php echo $product['id_product'] ?>"><button>Hapus</button></a>
+                                <a href="ubah.php?id=<?php echo $product['id_product'] ?>"><button>Ubah</button></a>
+                            </div>
+                        <?php endif ?>
                         <hr>
                         <strong><?= $product['brand'] ?></strong>
                         <br> <br>

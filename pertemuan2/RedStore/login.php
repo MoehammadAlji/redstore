@@ -7,7 +7,7 @@ session_start();
 
 // if (!isset($_SESSION["admin"])) {
 //     echo "<script>location='index.php'</script>";
-// }else {
+// }else {=
 //     echo "<script>location='index.php'</script>";
 
 // }
@@ -42,11 +42,12 @@ session_start();
             </form>
 
             <form method="post" id="register" class="input-group">
-                <input type="text" class="input-field" placeholder="User Id" required>
-                <input type="email" class="input-field" placeholder="Email Id" required>
-                <input type="password" class="input-field" placeholder="Enter Password" required>
+                <input type="text" class="input-field" name="username-register" name="Username" placeholder="User Id" required>
+                <input type="number" class="input-field" name="phone-number-register" placeholder="Number Phone">
+                <input type="email" class="input-field" name="email-register" placeholder="Email Id" required>
+                <input type="password" class="input-field" name="password-register" placeholder="Enter Password" required>
                 <input type="checkbox" class="check-box"> <span>I agree to the terms & conditions</span>
-                <button type="submit" class="submit-btn">Registern</button>
+                <button type="submit" class="submit-btn" name="register" value="register">Register</button>
             </form>
         </div>
     </div>
@@ -70,8 +71,11 @@ session_start();
 
 
     <?php
+        // var_dump("meh");
+        // die;
     //kalau ada tombol simpan (maksudnya tombol simpan ditekan)
     if (isset($_POST["login"])) {
+
         //melakukan kueri apakah akun(email sama password)-nya sama kayak di db
         $email = $_POST["email"];
         $password = $_POST["password"];
@@ -80,23 +84,25 @@ session_start();
 
 
         //ngitung akun yang sama (maksudnya apakah ada akun yang email dan password-nya sama dengan yang di DB)
-
         $akunyangcocok = $akuncustomer->num_rows;
+        $akunadminyangcocok = $akunadmin->num_rows;
+
 
         //jika seandainya ada akun yang sama, bakal di-loginkan
         if ($akunyangcocok == 1) {
             //ayuk login sini sama om :>>>
 
             //mendapatkan akun dlm bentuk array
-            $akun = $akunadmin->fetch_assoc();
-            if ($_SESSION['admin'] = $akun) {
-                echo "bismillah";
-            }
-            die;
-            
-            die;
             $akun = $akuncustomer->fetch_assoc();
             $_SESSION['customer'] = $akun;
+
+
+
+            // if (isset($_SESSION['admin'])) {
+            //     // var_dump($_SESSION['admin']);
+            // }
+
+
             // echo $_SESSION['customer'];
 
             // echo "<script>alert('Selamat, anda berhasil Login'); </script>";
@@ -111,12 +117,54 @@ session_start();
             }
 
             // header("Location: checkout.php");
-        } else {
+        }elseif ($akunadminyangcocok == 1) {
+            $admin = $akunadmin->fetch_assoc();
+            $_SESSION['admin'] = $admin;
+
+            echo "<script>location='index.php'</script>";
+            // header("location: admin/indexadmin.php");
+
+        }
+         else {
             echo "<script>alert('Ciee, yang password atau email-nya salah'); </script>";
             echo "<script>location='login.php'</script>";
         }
-    }
 
+
+
+        // if ($akunadminyangcocok == 1) {
+        //     $admin = $akunadmin->fetch_assoc();
+        //     $_SESSION['admin'] = $admin;
+        // } else {
+        //     echo "<script>alert('Ciee, yang password atau email-nya salah'); </script>";
+        //     echo "<script>location='login.php'</script>";
+        // }
+    } elseif (isset($_POST["register"])) {
+        var_dump("meh");
+        die;
+        $register_username = $_POST['username-register'];
+        $register_email = $_POST['email-register'];
+        $register_password = $_POST['password-register'];
+        $register_phone = $_POST['number-phone-register'];
+
+        var_dump($register_username); 
+        var_dump($register_email);
+        var_dump($register_password);
+        var_dump($register_phone);
+
+        die;
+
+        //memasukkan data registrasi
+        //kalau customer mau memasukkan nomer telepon
+
+        $koneksi->query("INSERT INTO customers(name_customer, email_customer, password_customer, telepon_customer) VALUES ('$register_username','$register_email','$register_password','$register_phone',)");
+
+        echo "<script>alert ('oke, anda sudah terdaftar ke database kami..... Selamat datang di Website kami')</script>";
+        // header("location: login.php");
+        
+        // echo "<meta http-equiv='refresh' content='1;url=index.php'>";    
+
+    }
     ?>
 
 </body>

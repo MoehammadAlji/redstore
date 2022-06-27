@@ -420,7 +420,7 @@ select:focus {
     padding: 10px;
 }
 
-.items a button{
+.items a button {
     /* align-items: flex-start; */
     text-align: end;
 }
@@ -636,7 +636,7 @@ select:focus {
     margin-left: 20px;
 }
 
-.id_payment{
+.id_payment {
     margin-top: 10px;
 }
 
@@ -789,7 +789,7 @@ select:focus {
     transition: .5s;
 }
 
-.insert-product form{
+.insert-product form {
     display: inline-block;
 }
 
@@ -816,6 +816,7 @@ select:focus {
 .border input:focus {
     outline: none;
 }
+
 .btn-update-product {
     top: 0;
     left: 0;
@@ -827,6 +828,44 @@ select:focus {
     margin: 0 80px;
 }
 
+/*========== LIST-CUSTOMER PAGE ==========*/
+
+.data-customer {
+    font-weight: 500;
+}
+
+.table-list {
+    margin: 20px 10px;
+}
+
+.input-group-update-customer {
+    top: 40px;
+    position: absolute;
+    width: 280px;
+    transition: .5s;
+}
+
+.container-form-box-update-customer {
+    width: 380px;
+    height: 350px;
+    position: relative;
+    background: #fff;
+    margin: 55px auto;
+    padding: 47px;
+    /* overflow: hidden; */
+    border-radius: 10% 10px 0 0;
+    border: 5px solid #999;
+}
+.input-update{
+    margin-top: 20px;
+}
+
+
+
+/*========== UPDATE PAGE ==========*/
+/* .data-customer{
+    font-weight: 100;
+} */
 
 /* ini untuk tablet */
 @media screen and (min-width: 768px) {

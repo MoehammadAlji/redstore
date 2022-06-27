@@ -5,9 +5,22 @@ $nomor = 1;
 include "partials/navbar.php";
 // echo "<pre>";
 // print_r($_SESSION["customer"]);
-// echo "</pre>";
+// echo "</pre>"; ?>
 
+<!-- <?php if (empty($_SESSION["checkout"]) || !isset($_SESSION["checkout"])) : ?>
+    <div class="error-page">
+        <img src="img/error.png" alt="" srcset="">
+        <h1>Wah, keranjangnya kok kosong? </h1>
+        <p>yuk beli barang pilihanmu </p>
+        <a class="error-button" href="product.php"><button>Ayo Mulai Belanja</button></a>
 
+    </div>
+
+<?php else : ?>
+    <li><a href="checkout.php">Check out</a></li>
+<?php endif ?> -->
+
+<?php
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id_customer = $_SESSION["customer"]["id_customer"];

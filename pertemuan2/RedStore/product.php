@@ -1,4 +1,5 @@
 <?php
+session_start();
 require "koneksi.php";
 
 $sql = "SELECT * from products";
@@ -51,13 +52,26 @@ $products = mysqli_fetch_all($value_tnn, MYSQLI_ASSOC); //merubah data sql jadi 
 
     <?php include "partials/item-loop.php" ?>
 
-    <div class="button-product-box">
-        <a href="tambahproduk.php">
-            <button type="button">
-                Add New Product
-            </button>
-        </a>
-    </div>
+
+    <?php if (isset($_SESSION["admin"])) : ?>
+        <div class="button-product-box">
+            <a href="tambahproduk.php">
+                <button type="button">
+                    Add New Product
+                </button>
+            </a>
+        </div>
+    <?php endif ?>
+
+    <!-- <div class="button-product-box">
+            <a href="tambahproduk.php">
+                <button type="button">
+                    Add New Product
+                </button>
+            </a>
+        </div> -->
+
+
 
     <!-- PAGINATION -->
     <!-- <div class="page-btn">

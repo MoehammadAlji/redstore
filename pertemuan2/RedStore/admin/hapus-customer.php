@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$id_product = $_GET['id'];
+$id_customer = $_GET['id'];
 
 // if (isset($_SESSION['keranjang'][$id_product])) {
 //     $_SESSION['keranjang'][$id_product] -= 1;
@@ -11,8 +11,8 @@ $id_product = $_GET['id'];
 //     unset($_SESSION["keranjang"][$id_product]);
 // }
 
-unset($_SESSION["keranjang"][$id_product]);
+unset($_SESSION["list-user"][$id_customer]);
 
 
 
-header("Location: keranjang.php");
+header("Location: list-user.php");

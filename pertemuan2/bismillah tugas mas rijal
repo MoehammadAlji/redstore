@@ -6,29 +6,31 @@
     - List Produk----
 2. Order
     - 1 Order/Pemesanan bisa lebih dari satu Produk----
-    - List Order----
+    - List Order
     - Merubah status order (not_yet_paid, paid, delivering, received)
 3. Dashboard Home
     - Melihat Total Produk
     - Melihat Omset Bulan ini
     - Melihat keuntungan Bulan ini
-4. User
-    - Melihat list user
+    
+    
+4. User (bismillah)
+    - Melihat list user----
     - Hapus list user
     - edit list user
 
 
-# User biasa (Tidak boleh mengakses fitur2 admin)
-1. Produk
-    - Melihat list produk
-    - Melakukan Pemesanan Produk
+# User biasa (Tidak boleh mengakses fitur2 admin)----
+1. Produk----
+    - Melihat list produk----
+    - Melakukan Pemesanan Produk----
 
-2. Chart
-    - List Produk dichart
-    - Hapus Produk dalam chart
-    - Melakukan order melalui chart
+2. Chart----
+    - List Produk dichart----
+    - Hapus Produk dalam chart----
+    - Melakukan order melalui chart----
 
-3. Order (1 Order bisa banyak produk)
+3. Order (1 Order bisa banyak produk)-----
     - List Order
     - Pembayaran (Minimal ada tombol bayar)
 

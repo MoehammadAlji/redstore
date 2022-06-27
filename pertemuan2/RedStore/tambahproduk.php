@@ -71,9 +71,9 @@ include "koneksi.php";
     if (isset($_POST['save'])) {
         echo "<alert>halo</alert>";
 
-        $photo = $_FILES['photo']['name'];
+        $photo = "img/" . $_FILES['photo']['name'];
         $lokasi = $_FILES['photo']['tmp_name'];
-        move_uploaded_file($lokasi, "fotoproduk/$photo");
+        move_uploaded_file($lokasi, "$photo");
 
         $koneksi->query("INSERT INTO products (image, name, price, quantity, brand, description) VALUES ('$photo','$_POST[name]','$_POST[price]','$_POST[stock]','$_POST[brand]','$_POST[description]')");
 
