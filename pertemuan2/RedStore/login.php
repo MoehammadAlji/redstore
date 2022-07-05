@@ -140,24 +140,16 @@ session_start();
         //     echo "<script>location='login.php'</script>";
         // }
     } elseif (isset($_POST["register"])) {
-        var_dump("meh");
-        die;
         $register_username = $_POST['username-register'];
         $register_email = $_POST['email-register'];
         $register_password = $_POST['password-register'];
-        $register_phone = $_POST['number-phone-register'];
+        $register_phone = $_POST['phone-number-register'];
 
-        var_dump($register_username); 
-        var_dump($register_email);
-        var_dump($register_password);
-        var_dump($register_phone);
-
-        die;
 
         //memasukkan data registrasi
         //kalau customer mau memasukkan nomer telepon
 
-        $koneksi->query("INSERT INTO customers(name_customer, email_customer, password_customer, telepon_customer) VALUES ('$register_username','$register_email','$register_password','$register_phone',)");
+        $koneksi->query("INSERT INTO customers(name_customer, email_customer, password_customer, telepon_customer) VALUES ('$register_username','$register_email','$register_password','$register_phone')");
 
         echo "<script>alert ('oke, anda sudah terdaftar ke database kami..... Selamat datang di Website kami')</script>";
         // header("location: login.php");

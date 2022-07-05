@@ -1,18 +1,17 @@
 <?php
-session_start();
-
-$id_customer = $_GET['id'];
-
-// if (isset($_SESSION['keranjang'][$id_product])) {
-//     $_SESSION['keranjang'][$id_product] -= 1;
-
-// } elseif (isset($_SESSION['keranjang'][$id_product]) == 1) {
-
-//     unset($_SESSION["keranjang"][$id_product]);
-// }
-
-unset($_SESSION["list-user"][$id_customer]);
+include "../koneksi.php";
+ini_set('display_errors', 1);
 
 
 
-header("Location: list-user.php");
+$ambil = $koneksi->query("SELECT * FROM customers where id_customer = '$_GET[id]'");
+$pecah = $ambil->fetch_assoc(); //untuk memecah data yang didapat untuk dijadikan Array
+
+
+// print_r($fotoproduk);
+// die;
+
+$koneksi->query("DELETE FROM customers where id_customer = '$_GET[id]'");
+header("location: list-user.php");
+
+?>

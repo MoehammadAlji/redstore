@@ -37,8 +37,12 @@ session_start();
 
                 <?php if (isset($_SESSION["admin"])) : ?>
                     <li><a href="admin/list-user.php">List Customer</a></li>
+                    <li><a href="admin/laba.php">Laba</a></li>
+                    <li><a href="admin/list_order.php">list-Order</a></li>
+
                 <?php else : ?>
-                    <li><a href="checkout.php">Check out</a></li>
+                    <li><a href="checkout.php">Checkout</a></li>
+                    <li><a href="nota.php">payment</a></li>
                 <?php endif ?>
 
                 <?php // if (isset($_SESSION["customer"] || $_SESSION["admin"])) : 

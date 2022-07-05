@@ -7,7 +7,7 @@ $pecah = $ambil->fetch_assoc();
 <section class="aaaa">
     <div class="list-product">
         <ul class="ini-ul">
-            <?php foreach ($products as $product) : ?>
+            <?php foreach ($products as $product) : //karena dijadikan array, maka products berubah menjadi nama array?> 
                 <li>
                     <div class="eee">
                         <img src="<?= $product['image'] ?>" class="gambar-li">

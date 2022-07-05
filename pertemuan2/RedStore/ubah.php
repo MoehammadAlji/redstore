@@ -47,7 +47,7 @@ $pecah = $ambil->fetch_assoc(); //untuk memecah data yang didapat untuk dijadika
                     </div>
                     <div>
                         <label>Product Photo: </label> <br> <br>
-                        <img src="img/<?= $pecah['image'] ?>" width="200px">
+                        <img src="<?= $pecah['image'] ?>" width="200px">
                     </div><br>
 
                     <div>
@@ -78,7 +78,7 @@ $pecah = $ambil->fetch_assoc(); //untuk memecah data yang didapat untuk dijadika
     $lokasi = $_FILES['photo']['tmp_name'];
     //kalau mau ngubah foto
     if (!empty($lokasi)) {
-        move_uploaded_file($lokasi, "img/$photo");
+        move_uploaded_file($lokasi, "$photo");
         $koneksi->query("UPDATE products SET image = '$photo', name = '$_POST[name]', price = '$_POST[price]', brand = '$_POST[brand]', description = '$_POST[description]' WHERE id_product = '$_GET[id]'");
         // var_dump($coba);
     }

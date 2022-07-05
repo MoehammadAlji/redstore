@@ -45,7 +45,6 @@ $customer = $customers->fetch_assoc(); //untuk memecah data yang didapat untuk d
                         </div><br>
                     </div>
 
-
                     <button class="btn-update-product" name="ubah">Ubah</button>
 
                 </form> <br>
@@ -69,10 +68,9 @@ $customer = $customers->fetch_assoc(); //untuk memecah data yang didapat untuk d
 <?php if (isset($_POST['ubah'])) : ?>
     <?php
 
-    $koneksi->query("UPDATE customers
-     SET name_customer = '$_POST[name_customer]', email_customer = '$_POST[email_customer]', telepon_customer = '$_POST[telepon_customer]', 
+    $cek = $koneksi->query("UPDATE customers
+     SET name_customer = '$_POST[name]', email_customer = '$_POST[email]', telepon_customer = '$_POST[phone]'
      WHERE id_customer = '$_GET[id]'");
-
     header("location: list-user.php");
 
     ?>

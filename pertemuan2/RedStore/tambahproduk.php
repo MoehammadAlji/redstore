@@ -38,6 +38,10 @@ include "koneksi.php";
                                 <input type="number" name="price">
                             </div><br>
                             <div>
+                                <label>Buy Price : </label>
+                                <input type="number" name="buy_price">
+                            </div><br>
+                            <div>
                                 <label>Product stock : </label>
                                 <input type="number" name="stock">
                             </div><br>
@@ -49,7 +53,7 @@ include "koneksi.php";
 
                         <div><br>
                             <label>Product description: </label>
-                            <textarea name="description" cols="30" rows="10"></textarea>
+                            <textarea name="description" cols="30" rows="7"></textarea>
                         </div><br>
 
                         <div>
@@ -66,18 +70,17 @@ include "koneksi.php";
     </div>
 
     <?php
-    
+
 
     if (isset($_POST['save'])) {
-        echo "<alert>halo</alert>";
 
         $photo = "img/" . $_FILES['photo']['name'];
         $lokasi = $_FILES['photo']['tmp_name'];
         move_uploaded_file($lokasi, "$photo");
 
-        $koneksi->query("INSERT INTO products (image, name, price, quantity, brand, description) VALUES ('$photo','$_POST[name]','$_POST[price]','$_POST[stock]','$_POST[brand]','$_POST[description]')");
+        $koneksi->query("INSERT INTO products (image, name, price, buy_price, quantity, brand, description) VALUES ('$photo','$_POST[name]','$_POST[price]','$_POST[buy_price]','$_POST[stock]','$_POST[brand]','$_POST[description]')");
 
-        echo "<meta http-equiv='refresh' content='1;url=index.php'>";    
+        echo "<meta http-equiv='refresh' content='1;url=index.php'>";
     }
     ?>
 

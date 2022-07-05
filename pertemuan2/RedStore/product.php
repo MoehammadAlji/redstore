@@ -7,6 +7,9 @@ $sql = "SELECT * from products";
 $value_tnn = mysqli_query($koneksi, $sql); // cara ambil data dr sql
 $products = mysqli_fetch_all($value_tnn, MYSQLI_ASSOC); //merubah data sql jadi array
 
+// $sumproducts = $koneksi->query("SELECT * FROM products");
+// $sumproduct = mysqli_num_rows($sumproducts);
+
 ?>
 <html lang="en">
 
@@ -40,7 +43,9 @@ $products = mysqli_fetch_all($value_tnn, MYSQLI_ASSOC); //merubah data sql jadi 
     <!-- featured products -->
     <div class="small-container">
         <div class="row row-2">
-            <h2 class="title">All product</h2>
+            <h2 class="title">
+                All product <!--(<?= $sumproduct ?>)  -->
+            </h2>
             <!-- <select name="" id="">
                 <option value="">Default shorting</option>
                 <option value="">Short by price</option>

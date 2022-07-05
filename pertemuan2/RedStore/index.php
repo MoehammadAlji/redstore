@@ -15,7 +15,7 @@ $products = mysqli_fetch_all($value_tnn, MYSQLI_ASSOC); //merubah data sql jadi 
     <!-- kalau belum login -->
 <?php else : ?>
     <?php header("location: login.php"); ?>
-<?php endif */?>
+<?php endif */ ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -48,11 +48,25 @@ $products = mysqli_fetch_all($value_tnn, MYSQLI_ASSOC); //merubah data sql jadi 
         <?php include 'partials/landing-page.php'; ?>
     </div>
     <!-- featured category -->
-    <?php //include 'partials/featured-category.php'; 
-    ?>
+
     <!-- featured products -->
     <h2 class="title">A few product from our store</h2>
     <!-- Items -->
+
+    <!-- 
+    <div class="container " style="width: 86%; overflow-x:scroll;">
+        <div class="menu">
+            <div class="biodata" style="margin:7px;"><img src="img/Vector (1).png" alt="" class="Biodata">Biodata <span>150</span></div>
+            <div style="margin:7px;"><img src="img/Vector (2).png" alt="" style="margin: 9px;">Online Test <span>80</span></div>
+            <div style="margin:7px;"><img src="img/Vector (3).png" alt="" style="margin: 9px;">Video Profile <span>50</span></div>
+            <div style="margin:7px;"><img src="img/Vector (4).png" alt="" style="margin: 9px;">Interview <span> 30</span></div>
+            <div style="margin:7px;"><img src="img/Vector (5).png" alt="" style="margin: 9px;">Offline Test <span>20</span></div>
+            <div style="margin:7px;"><img src="img/Vector (9).png" alt="" style="margin: 9px;">New student <span>15</span></div>
+            <div style="margin:7px;"><img src="img/Vector (6).png" alt="" style="margin: 9px;">Failed <span>135 </span></div>
+            <div style="margin:7px;"><img src="img/Vector (7).png" alt="" style="margin: 9px;">Resign</div>
+        </div>
+    </div> -->
+
     <section class="aaaa">
         <div class="list-product">
             <ul class="ini-ul">
@@ -79,13 +93,17 @@ $products = mysqli_fetch_all($value_tnn, MYSQLI_ASSOC); //merubah data sql jadi 
             </ul>
         </div>
     </section>
+    <!-- item-loop -->
+    <!-- <?php include "item-loop.php" ?> -->
+    <!-- counter up -->
 
-    <!-- <?php include "item-loop.php"?> -->
     <!-- Testimonial -->
     <?php include 'partials/testimonial.php'; ?>
     <!-- Brands -->
-    <?php include 'partials/brands.php'; ?>
-
+    <!-- <?php include 'partials/brands.php'; ?> -->
+    <!-- counter -->
+    <!-- <?php include 'partials/counter.php'; ?> -->
+    <!-- footer -->
     <?php include 'partials/footer.php'; ?>
 
 </body>

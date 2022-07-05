@@ -2,23 +2,8 @@
 session_start();
 include "koneksi.php";
 $nomor = 1;
-include "partials/navbar.php";
-// echo "<pre>";
-// print_r($_SESSION["customer"]);
-// echo "</pre>"; ?>
+include "partials/navbar.php"; ?>
 
-<!-- <?php if (empty($_SESSION["checkout"]) || !isset($_SESSION["checkout"])) : ?>
-    <div class="error-page">
-        <img src="img/error.png" alt="" srcset="">
-        <h1>Wah, keranjangnya kok kosong? </h1>
-        <p>yuk beli barang pilihanmu </p>
-        <a class="error-button" href="product.php"><button>Ayo Mulai Belanja</button></a>
-
-    </div>
-
-<?php else : ?>
-    <li><a href="checkout.php">Check out</a></li>
-<?php endif ?> -->
 
 <?php
 
@@ -51,6 +36,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $arrayshipping = $ambil->fetch_assoc();
     $cost = $arrayshipping['cost'];
     $city_name = $arrayshipping['city_name'];
+
+
+    // var_dump($_POST); echo "<br>";
+    // var_dump($id_customer); echo "<br>";
+    // var_dump($id_shipping); echo "<br>";
+    // var_dump($totalBeli); echo "<br>";
+    // var_dump($id_payment); echo "<br>";
+    // die;
 
     $totalBeli = $_POST["total_belanja"] + $cost;
     // $totalBeli = $_POST["total_belanja"] + $cost;
@@ -189,22 +182,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         </div>
     </div>
-    <?php
-
-
-    ?>
-
-    <pre>
-    <?php
-    // var_dump($_SESSION['keranjang']);
-    echo "<pre>";
-    // var_dump($_POST["id_shipping"]);
-    // var_dump($id_customer);
-    // var_dump($id_shipping);
-    // var_dump($ambil);
-    echo "</pre>";
-    ?>
-    </pre>
 </body>
 
 </html>
