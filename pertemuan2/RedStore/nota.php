@@ -2,7 +2,7 @@
 
 include "koneksi.php";
 include "partials/navbar.php";
-
+session_start();
 
 
 
@@ -27,56 +27,51 @@ include "partials/navbar.php";
                     <thead>
                         <tr>
                             <th id="bruh">No</th>
-                            <th>Status</th>
-                            <th>Customer Name</th>
+                            <th>Nama Barang</th>
                             <th>Purchase Date</th>
                             <th>Quantity</th>
                             <th>Subprice</th>
-                            <th>action</th>
+                            <th>Status Purchasing</th>
                             <!-- <th>Action</th> -->
                         </tr>
                     </thead>
                     <tbody>
 
-                        <?php
 
-                        foreach ($_SESSION['keranjang'] as $id_product => $jumlah) : ?>
-                            <!-- menampilkan product yang di-ulangkan berdasarkan idproduct -->
-                            <?php
-                            $ambil = $koneksi->query("SELECT * from products INNER JOIN product_purchasings ON products.id_product = product_purchasings.id_product INNER JOIN purchasings ON purchasings.id_purchasing = product_purchasings.id_purchasing WHERE purchasings.status_purchasing = 'paid'");
-                            $pecah = $ambil->fetch_assoc();
-                            ?>
-                            <!-- <pre>
-                            <?= print_r($pecah) . "<br>" ?>
-                        </pre> -->
+
+                        <!-- menampilkan product yang di-ulangkan berdasarkan idproduct -->
+                        <?php
+                        $datanota = $koneksi->query("SELECT * from products INNER JOIN product_purchasings ON products.id_product = product_purchasings.id_product INNER JOIN purchasings ON purchasings.id_purchasing = product_purchasings.id_purchasing INNER JOIN shippings ON shippings.id_shipping  = purchasings.id_shipping WHERE purchasings.status_purchasing = 'not_yet_paid'");
+                        // $peccah = $datanota->fetch_assoc();
+                        $nomor = 1;
+                        ?>
+
+                        <?php foreach ($datanota as $pecah) : ?>
                             <tr>
                                 <td><?= $nomor; ?></td>
                                 <td><?= strtolower($pecah['name']); ?></td>
-                                <td><?= $_SESSION['customer']['name_customer'] ?></td>
-                                <td></td>
-                                <td><?= $jumlah ?></td>
-                                <td><?= "Rp" .  number_format($pecah['price'] * $jumlah, 2) . ",-"; ?></td>
-                                <td>
-                                    <button class="checkout" name="Bayar">Bayar</button>
-                                </td>
-                                <!-- <td>
-                                <a href="hapuskeranjang.php?id=<?= $id_product ?>"><button>Hapus</button></a>
-                            </td> -->
+                                <td><?= $pecah['purchase_date'] ?></td>
+                                <td><?= $pecah['jumlah'] ?></td>
+                                <td><?= "Rp" .  number_format($pecah['price'] * $pecah['jumlah'] + $pecah['cost'] , 2) . ",-"; ?></td>
+                                <td><?= $pecah['status_purchasing'] ?></td>
                             </tr>
                             <?php $nomor++ ?>
-                            <?php $totalBelanja += $pecah['price'] ?>
+                            <?php $totalBelanja += $pecah['price'] + $pecah['cost'] ?>
                         <?php endforeach ?>
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th colspan="6">Total Belanja: </th>
+                            <th colspan="4">Total Belanja: </th>
                             <th><?= "Rp" .  number_format($totalBelanja, 2); ?></th>
+                            <th>
+                                <button class="checkout" name="Bayar">Bayar</button>
+                            </th>
                         </tr>
                     </tfoot>
                 </table>
 
                 <input type="text" name="total_belanja" value="<?= $totalBelanja ?>" hidden>
-                <?=$_SESSION['customer']['name_customer'] ?> 
+                <!-- <?= $_SESSION['customer']['name_customer'] ?> -->
                 <!-- <?= "<br> Nomor Telepon : " . $_SESSION['customer']['telepon_customer'] ?> -->
 
 
